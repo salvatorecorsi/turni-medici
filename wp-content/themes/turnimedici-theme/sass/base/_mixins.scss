@@ -1,0 +1,46 @@
+@mixin generateVariants($variants) {
+	@each $variant, $properties in $variants {
+		&.#{$variant} {
+			@each $property, $value in $properties {
+				#{$property}: $value;
+			}
+		}
+	}
+}
+
+@mixin generateButtonStates($params) {
+	$pressed: map.get($params, 'pressed');
+	$hover: map.get($params, 'hover');
+	$focus: map.get($params, 'focus');
+	$selected: map.get($params, 'selected');
+	$toggled: map.get($params, 'toggled');
+	$disabled: map.get($params, 'disabled');
+
+	@media (min-width: 1024px) {
+		&:hover:not(.selected, .disabled, :active) {
+			@each $property, $value in $hover {
+				#{$property}: $value;
+			}
+		}
+	}
+
+	&:active {
+		@each $property, $value in $pressed {
+			#{$property}: $value;
+		}
+	}
+
+	&.selected {
+		@each $property, $value in $selected {
+			#{$property}: $value;
+		}
+	}
+
+	&.disabled {
+		@each $property, $value in $disabled {
+			#{$property}: $value;
+		}
+	}
+
+
+}

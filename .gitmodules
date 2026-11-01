@@ -1,0 +1,6 @@
+[submodule "define-blocks"]
+	path = wp-content/plugins/define-blocks
+	url = https://github.com/corsivo-suite/define-blocks.git
+[submodule "core-editor"]
+	path = wp-content/plugins/corsivo-core-editor
+	url = https://github.com/corsivo-suite/core-editor.git

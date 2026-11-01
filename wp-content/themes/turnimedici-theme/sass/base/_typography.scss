@@ -1,0 +1,25 @@
+html, body {
+	font-size: 16px;
+	// Use wv for fluid typography
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.bold,
+strong,
+b {
+	font-weight: bold;
+}
+.italic,
+.cursive,
+em {
+	font-style: italic;
+}
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}

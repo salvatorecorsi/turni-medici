@@ -1,0 +1,21 @@
+{
+	"name": "turnimedici-theme",
+	"version": "0.1.0",
+	"description": "Turni Medici demo theme for Define Blocks and Core Editor",
+	"private": true,
+	"author": "Salvatore Corsi",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"Theme"
+	],
+	"homepage": "https://salvatorecorsi.com",
+	"devDependencies": {
+		"sass": "^1.32.8"
+	},
+	"scripts": {
+		"build": "npm run compile",
+		"watch": "sass --watch sass/style.scss:style.css --no-source-map --style=expanded",
+		"compile": "sass sass/style.scss:style.css --no-source-map --style=expanded"
+	}
+}

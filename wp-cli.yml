@@ -1,0 +1,3 @@
+path: .
+apache_modules:
+  - mod_rewrite

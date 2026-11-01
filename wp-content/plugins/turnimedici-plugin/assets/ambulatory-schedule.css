@@ -1,0 +1,17 @@
+/* Mirror delle regole editor orari (.tm-ao-*) da custom-fields/weekly-schedule/src/aft-schedule/style.scss,
+   scoped sotto .tm-doctor-sched per la modale medico. Tenere allineato. */
+.tm-doctor-sched {
+    margin-top: 18px;
+    font-size: 13px;
+}
+.tm-doctor-sched > .tm-doctor-form__label { display: block; margin-bottom: 8px; }
+.tm-doctor-sched .tm-ao-rows { display: flex; flex-direction: column; gap: 6px; overflow-x: auto; }
+.tm-doctor-sched .tm-ao-row { display: grid; grid-template-columns: 120px minmax(120px, 1fr) 180px 150px 40px; gap: 8px; align-items: center; min-width: 600px; }
+.tm-doctor-sched .tm-ao-row select,
+.tm-doctor-sched .tm-ao-row input[type='time'] { height: 30px; border: 1px solid #949494; border-radius: 2px; background: #fff; color: #1e1e1e; font-size: 13px; padding: 0 8px; }
+.tm-doctor-sched .tm-ao-row select { width: 100%; }
+.tm-doctor-sched .tm-ao-row input[type='time'] { flex: 1; min-width: 0; padding: 0 4px; text-align: center; font-variant-numeric: tabular-nums; }
+.tm-doctor-sched .tm-ao-row__time { display: flex; align-items: center; gap: 6px; }
+.tm-doctor-sched .tm-ao-row__dash { color: #757575; }
+.tm-doctor-sched .tm-ao-row--head { color: #757575; font-size: 11px; font-weight: 600; text-transform: uppercase; padding: 0 2px; }
+.tm-doctor-sched .tm-ao-hint { color: #757575; font-size: 12px; margin: 2px 0 0; }

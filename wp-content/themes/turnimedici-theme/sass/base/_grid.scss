@@ -1,0 +1,120 @@
+@use "globals" as globals;
+@use "sass:map";
+
+.wp-block-column,
+.wp-block-column:not(:first-child) {
+	margin: 0;
+}
+
+// Loops to enumerate the classes for gallery columns.
+@for $i from 1 through globals.$cols {
+	.col-#{$i} {
+		width: calc((1 / globals.$cols) * $i);
+	}
+}
+@for $i from 1 through globals.$cols {
+	@for $j from 1 through globals.$cols {
+		@if $j <= $i {
+			.col-#{$j}-of-#{$i} {
+				width: calc((1 / $i) * $j);
+			}
+		}
+	}
+}
+
+$sides: "", "-left", "-right", "-top", "-bottom";
+$sides-labels: (
+	1: "-05x",
+	2: "",
+	3: "-15x",
+	4: "-2x",
+	5: "-25x",
+	6: "-3x",
+	7: "-35x",
+	8: "-4x",
+	9: "-45x",
+	10: "-5x",
+	11: "-55x",
+);
+
+@for $i from 1 to 9 {
+	$label: map.get($sides-labels, $i);
+	@each $side in $sides {
+		.padding#{$side}#{$label} {
+			padding#{$side}: $i * 0.5 * globals.$spacing;
+		}
+		.margin#{$side}#{$label} {
+			margin#{$side}: $i * 0.5 * globals.$spacing;
+		}
+	}
+	.padding-row#{$label} {
+		padding-top: $i * 0.5 * globals.$spacing;
+		padding-bottom: $i * 0.5 * globals.$spacing;
+	}
+	.padding-col#{$label} {
+		padding-left: $i * 0.5 * globals.$spacing;
+		padding-right: $i * 0.5 * globals.$spacing;
+	}
+}
+
+.col-gutter {
+	padding-left: globals.$col-gutter;
+	padding-right: globals.$col-gutter;
+}
+.remove-col-gutter {
+	margin-left: calc(globals.$col-gutter * -1);
+	margin-right: calc(globals.$col-gutter * -1);
+}
+.col-gutter-left {
+	padding-left: globals.$col-gutter;
+}
+.col-gutter-right {
+	padding-right: globals.$col-gutter;
+}
+
+body.noscroll {
+	overflow: hidden;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+.clear {
+	clear: both;
+}
+.flex {
+	display: flex;
+}
+.flex.space {
+	justify-content: space-between;
+}
+.flex.v-center {
+	align-items: center;
+}
+.flex.h-center {
+	justify-content: center;
+}
+.flex.h-end {
+	justify-content: flex-end;
+}
+.wrap {
+	flex-wrap: wrap;
+}
+.full-height {
+	min-height: 100vh;
+}
+
+@media (min-width: 600px) and (max-width: 781px) {
+	.wp-block-columns {
+		flex-wrap: nowrap !important;
+	}
+	.wp-block-column:not(:only-child) {
+		flex-basis: 50% !important;
+	}
+}

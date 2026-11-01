@@ -1,0 +1,9 @@
+$spacing: 1rem; // multiplyer of padding-2x...
+$cols: 12;
+$col-gutter: 1rem;
+
+.main-column {
+	position: relative;
+	width: calc(100% - 2rem);
+	margin: 0 auto;
+}

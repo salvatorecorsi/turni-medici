@@ -1,0 +1,229 @@
+/* Editor orari ambulatoriali — condiviso da: blocco AFT (style.scss), scheda medico admin (doctors.js), profilo app (dashboard/style.scss) */
+.tm-ao-sched {
+    font-size: 13px;
+
+    .tm-ao-rows {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        overflow-x: auto;
+    }
+
+    .tm-ao-row {
+        display: grid;
+        grid-template-columns: 130px minmax(140px, 1fr) 196px 160px 40px;
+        gap: 8px;
+        align-items: center;
+        min-width: 640px;
+
+        select,
+        input[type='time'] {
+            height: 30px;
+            border: 1px solid #949494;
+            border-radius: 2px;
+            background: #fff;
+            color: #1e1e1e;
+            font-size: 13px;
+            padding: 0 8px;
+        }
+
+        select {
+            width: 100%;
+        }
+
+        input[type='time'] {
+            flex: 1;
+            min-width: 0;
+            padding: 0 4px;
+            text-align: center;
+            font-variant-numeric: tabular-nums;
+        }
+    }
+
+    .tm-ao-row__time {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .tm-ao-row__dash {
+        color: #757575;
+    }
+
+    .tm-ao-row--head {
+        color: #757575;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 0 2px;
+    }
+
+    .tm-ao-add {
+        margin-top: 8px;
+        height: 32px;
+        padding: 0 12px;
+        background: transparent;
+        border: 1px solid var(--tm-ao-accent, #2271b1);
+        border-radius: 2px;
+        color: var(--tm-ao-accent, #2271b1);
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .tm-ao-add:hover {
+        background: rgba(34, 113, 177, 0.06);
+    }
+
+    .tm-ao-x {
+        height: 30px;
+        background: transparent;
+        border: 0;
+        border-radius: 2px;
+        color: #cc1818;
+        font-size: 16px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .tm-ao-x:hover {
+        background: #fcf0f1;
+    }
+}
+
+.tm-ao-hint {
+    color: #757575;
+    font-size: 12px;
+    margin: 2px 0 0;
+}
+
+.tm-doctor-sched {
+    margin-top: 18px;
+}
+
+.tm-doctor-sched > .tm-doctor-form__label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.tm-assign {
+    padding: 12px 0;
+
+    &__toolbar {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    &__empty {
+        color: #757575;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 10px;
+        border: 1px solid #e0e0e0;
+        background: #fff;
+        margin-bottom: -1px;
+    }
+
+    &__handle {
+        cursor: grab;
+        color: #949494;
+        display: inline-flex;
+    }
+
+    &__pos {
+        min-width: 22px;
+        font-weight: 600;
+        color: #757575;
+        font-size: 12px;
+    }
+
+    &__name {
+        flex: 1;
+        font-weight: 500;
+    }
+
+    &__meta {
+        color: #757575;
+        font-size: 12px;
+    }
+}
+
+.tm-add-doctors {
+    &__controls {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    &__controls .components-search-control {
+        flex: 1;
+    }
+
+    .components-modal__content {
+        overflow: hidden;
+    }
+
+    &__table-wrap {
+        max-height: 40vh;
+        overflow-y: auto;
+        border: 1px solid #dcdcde;
+        border-radius: 2px;
+    }
+
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+
+    &__table tr {
+        cursor: pointer;
+    }
+
+    &__table tr:hover {
+        background: #f0f6ff;
+    }
+
+    &__table td {
+        padding: 6px 12px;
+        border-bottom: 1px solid #f0f0f1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__check {
+        width: 28px;
+    }
+
+    &__type {
+        color: #757575;
+        font-size: 12px;
+        text-align: right;
+    }
+
+    &__empty {
+        color: #757575;
+        text-align: center;
+        padding: 16px;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        padding-top: 12px;
+        margin-top: 12px;
+        border-top: 1px solid #e0e0e0;
+    }
+}

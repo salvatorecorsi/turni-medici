@@ -1,0 +1,188 @@
+{
+    "configurator": {
+        "colors": [
+            {
+                "slug": "blue",
+                "name": "Blu",
+                "color": "#2b6fe0"
+            },
+            {
+                "slug": "blue-dark",
+                "name": "Blu scuro",
+                "color": "#1f55b8"
+            },
+            {
+                "slug": "blue-50",
+                "name": "Blu chiaro",
+                "color": "#eaf1fd"
+            },
+            {
+                "slug": "green",
+                "name": "Verde",
+                "color": "#1f9d5c"
+            },
+            {
+                "slug": "green-bg",
+                "name": "Verde sfondo",
+                "color": "#e5f5ec"
+            },
+            {
+                "slug": "green-dark",
+                "name": "Verde scuro",
+                "color": "#157a48"
+            },
+            {
+                "slug": "ink",
+                "name": "Inchiostro",
+                "color": "#16293a"
+            },
+            {
+                "slug": "muted",
+                "name": "Testo secondario",
+                "color": "#5b6b7b"
+            },
+            {
+                "slug": "line",
+                "name": "Bordo",
+                "color": "#e6edf4"
+            },
+            {
+                "slug": "bg",
+                "name": "Sfondo pagina",
+                "color": "#f6faff"
+            },
+            {
+                "slug": "surface",
+                "name": "Superficie",
+                "color": "#ffffff"
+            },
+            {
+                "slug": "red",
+                "name": "Rosso",
+                "color": "#d64535"
+            },
+            {
+                "slug": "amber",
+                "name": "Ambra",
+                "color": "#b7791f"
+            }
+        ],
+        "fonts": [
+            {
+                "slug": "body",
+                "name": "Inter Body",
+                "css": "font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-weight: 400; line-height: 1.6;",
+                "scope": "paragraph",
+                "default": true
+            },
+            {
+                "slug": "heading",
+                "name": "Inter Heading",
+                "css": "font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em;",
+                "scope": "heading"
+            }
+        ],
+        "custom_fonts": [
+            {
+                "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
+                "fonts": [
+                    {
+                        "varname": "inter",
+                        "family": "Inter"
+                    }
+                ]
+            }
+        ],
+        "install_fonts": [],
+        "breakpoints": [],
+        "spacing": {
+            "contentSize": "1200px",
+            "wideSize": "1320px",
+            "spacingSizes": [
+                {
+                    "slug": "20",
+                    "name": "XS",
+                    "size": "20px"
+                },
+                {
+                    "slug": "32",
+                    "name": "S",
+                    "size": "32px"
+                },
+                {
+                    "slug": "48",
+                    "name": "M",
+                    "size": "48px"
+                },
+                {
+                    "slug": "64",
+                    "name": "L",
+                    "size": "64px"
+                },
+                {
+                    "slug": "96",
+                    "name": "XL",
+                    "size": "96px"
+                }
+            ]
+        },
+        "global_styles": {
+            "body": {
+                "background": "bg",
+                "color": "ink",
+                "font": "body"
+            },
+            "heading": {
+                "font": "heading",
+                "color": "ink"
+            },
+            "link": {
+                "color": "blue",
+                "hoverColor": "blue-dark"
+            }
+        },
+        "style_templates": [],
+        "context_styles": [],
+        "core_components": [],
+        "functional_pages": [],
+        "panel_post_types": null
+    },
+    "global": {
+        "tab_functional_pages": false,
+        "tab_custom_slugs": false,
+        "core_renders": false,
+        "gutenberg_footer": true,
+        "cpt_menu_parent": false,
+        "force_style_injection": false,
+        "minify_css": false,
+        "minify_js": false
+    },
+    "wordpress": {
+        "homepage": {
+            "default": ""
+        }
+    },
+    "custom_slugs": {
+        "tm_facility": {
+            "default": {
+                "singular": "",
+                "plural": "",
+                "archive_page": ""
+            }
+        },
+        "tm_aft": {
+            "default": {
+                "singular": "",
+                "plural": "",
+                "archive_page": ""
+            }
+        },
+        "post": {
+            "default": {
+                "singular": "",
+                "plural": "",
+                "archive_page": ""
+            }
+        }
+    }
+}

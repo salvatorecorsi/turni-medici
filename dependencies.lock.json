@@ -1,0 +1,25 @@
+{
+  "wordpress": {
+    "testedVersion": "7.0.1",
+    "locale": "it_IT",
+    "bundled": false
+  },
+  "plugins": [
+    {
+      "name": "Define Blocks",
+      "path": "wp-content/plugins/define-blocks",
+      "repository": "https://github.com/corsivo-suite/define-blocks",
+      "version": "1.1.0",
+      "commit": "b80276c5671a98f5441510d7ef5d13672fc18f16",
+      "type": "git-submodule"
+    },
+    {
+      "name": "Core Editor",
+      "path": "wp-content/plugins/corsivo-core-editor",
+      "repository": "https://github.com/corsivo-suite/core-editor",
+      "version": "2.1.2",
+      "commit": "7715a74aac5530f353e006319d07a7c7bc5d4b48",
+      "type": "git-submodule"
+    }
+  ]
+}

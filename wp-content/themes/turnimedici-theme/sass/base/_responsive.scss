@@ -1,0 +1,30 @@
+@use "globals" as globals;
+
+@mixin breakpoint($point) {
+	@if $point == m {
+		@media (max-width: 1024px) { @content ; }
+	}
+	@else if $point == s {
+		@media (max-width: 767px) { @content ; }
+	}
+	@else if $point == xs {
+		@media (max-width: 600px) { @content ; }
+	}
+	@else {
+		@media (max-width: $point) { @content ; }
+	}
+}
+
+@include breakpoint(m){
+
+}
+
+@include breakpoint(s){
+
+}
+
+@include breakpoint(xs){
+	@for $i from 1 through globals.$cols {
+		.col-#{$i} { width: 100%; }
+	}
+}

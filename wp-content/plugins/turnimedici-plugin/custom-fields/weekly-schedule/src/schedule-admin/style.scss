@@ -1,0 +1,483 @@
+.tm-schedule-admin {
+    --tm-admin-border: #dcdcde;
+    --tm-admin-muted: #646970;
+    color: #1d2327;
+}
+
+.tm-schedule-admin__loading {
+    display: flex;
+    justify-content: center;
+    padding: 64px;
+}
+
+.tm-schedule-admin__header,
+.tm-schedule-admin__header-actions,
+.tm-schedule-admin__toolbar,
+.tm-schedule-admin__toolbar-group,
+.tm-schedule-admin__section-bar,
+.tm-schedule-admin__row-actions,
+.tm-schedule-admin__modal-actions,
+.tm-schedule-admin__conflict-actions,
+.tm-schedule-admin__json-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tm-schedule-admin__header {
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--tm-admin-border);
+}
+
+.tm-schedule-admin__header > strong {
+    font-size: 16px;
+}
+
+.tm-schedule-admin__unsaved {
+    color: #996800;
+    font-weight: 600;
+}
+
+.tm-schedule-admin__diagnostics {
+    display: grid;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.tm-schedule-admin__diagnostic {
+    padding: 8px 10px;
+    border-left: 3px solid #dba617;
+    background: #fcf9e8;
+}
+
+.tm-schedule-admin__diagnostic--error {
+    border-color: #d63638;
+    background: #fcf0f1;
+}
+
+.tm-schedule-admin__tabs {
+    margin-top: 12px;
+}
+
+.tm-schedule-admin__tabs .components-tab-panel__tabs {
+    position: sticky;
+    top: 32px;
+    z-index: 5;
+    border-bottom: 1px solid var(--tm-admin-border);
+    background: #fff;
+}
+
+.tm-schedule-admin__tabs .components-tab-panel__tab-content {
+    padding: 16px 0;
+}
+
+.tm-schedule-admin__toolbar {
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.tm-schedule-admin__toolbar-group {
+    flex-wrap: wrap;
+}
+
+.tm-schedule-admin__toolbar-group > strong {
+    color: var(--tm-admin-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.tm-schedule-admin__document-bar {
+    margin-top: 12px;
+}
+
+.tm-schedule-admin__document-bar .tm-schedule-admin__json-status {
+    border-top: 1px solid var(--tm-admin-border);
+}
+
+.tm-schedule-admin__section-desc {
+    flex: 1;
+    margin: 0;
+    color: var(--tm-admin-muted);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.tm-schedule-admin__conflict-notice {
+    display: grid;
+    gap: 4px;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-left: 4px solid #dba617;
+    background: #fcf9e8;
+}
+
+.tm-schedule-admin__json-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.tm-schedule-admin__json-workspace--conflict {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.tm-schedule-admin__json-column {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+    color: #1d2327;
+    font-weight: 600;
+}
+
+.tm-schedule-admin__json {
+    display: block;
+    width: 100%;
+    min-height: 620px;
+    margin: 0;
+    padding: 16px;
+    resize: vertical;
+    border: 1px solid var(--tm-admin-border);
+    border-radius: 0;
+    background: #fff;
+    color: #1d2327;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    line-height: 1.55;
+    tab-size: 2;
+}
+
+.tm-schedule-admin__json:focus {
+    border-color: var(--wp-admin-theme-color);
+    box-shadow: 0 0 0 1px var(--wp-admin-theme-color);
+    outline: 2px solid transparent;
+}
+
+.tm-schedule-admin__json--readonly {
+    background: #f6f7f7;
+    color: #50575e;
+}
+
+.tm-schedule-admin__json--compact {
+    min-height: 240px;
+}
+
+.tm-schedule-admin__queue {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tm-schedule-admin__queue-row {
+    margin: 0;
+    border: 1px solid var(--tm-admin-border);
+    background: #fff;
+}
+
+.tm-schedule-admin__queue-row.is-open {
+    border-color: var(--wp-admin-theme-color);
+}
+
+.tm-schedule-admin__queue-row.is-dragging {
+    position: relative;
+    z-index: 2;
+    border-color: var(--wp-admin-theme-color);
+}
+
+.tm-schedule-admin__queue-head {
+    display: flex;
+    align-items: stretch;
+}
+
+.tm-schedule-admin__queue-handle {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: var(--tm-admin-muted);
+    cursor: grab;
+    touch-action: none;
+}
+
+.tm-schedule-admin__queue-handle:active {
+    cursor: grabbing;
+}
+
+.tm-schedule-admin__queue-handle.is-disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.tm-schedule-admin__queue-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+    padding: 10px 14px;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.tm-schedule-admin__queue-pos {
+    flex: 0 0 auto;
+    min-width: 28px;
+    padding: 2px 6px;
+    background: #f0f0f1;
+    color: var(--tm-admin-muted);
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.tm-schedule-admin__queue-name {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.tm-schedule-admin__queue-current {
+    padding: 2px 8px;
+    background: var(--wp-admin-theme-color, #3858e9);
+    color: #fff;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tm-schedule-admin__queue-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.tm-schedule-admin__queue-hours {
+    color: var(--tm-admin-muted);
+    font-weight: 600;
+}
+
+.tm-schedule-admin__queue-status {
+    padding: 2px 8px;
+    background: #f0f0f1;
+    color: #3c434a;
+    font-weight: 600;
+}
+
+.tm-schedule-admin__queue-status--done {
+    background: #edfaef;
+    color: #006b1b;
+}
+
+.tm-schedule-admin__queue-status--skipped {
+    background: #f6f7f7;
+    color: var(--tm-admin-muted);
+}
+
+.tm-schedule-admin__queue-warn {
+    padding: 2px 8px;
+    background: #fcf9e8;
+    color: #996800;
+    font-weight: 600;
+}
+
+.tm-schedule-admin__queue-chevron {
+    color: var(--tm-admin-muted);
+    font-size: 10px;
+}
+
+.tm-schedule-admin__queue-body {
+    display: grid;
+    gap: 14px;
+    padding: 14px;
+    border-top: 1px solid var(--tm-admin-border);
+    background: #fbfbfc;
+}
+
+.tm-schedule-admin__queue-fields {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 720px;
+    align-items: start;
+}
+
+/* Le metriche di TextControl e SelectControl divergono tra versioni di @wordpress/components:
+   qui vengono forzate identiche perché i tre campi restino su una riga allineata. */
+.tm-schedule-admin__queue-fields .components-base-control__field {
+    margin-bottom: 0;
+}
+
+.tm-schedule-admin__queue-fields .components-base-control__label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* La label di InputBase (select moderni) spazia già via layout interno: margine esterno azzerato */
+.tm-schedule-admin__queue-fields .components-input-control__label {
+    margin-bottom: 0;
+}
+
+.tm-schedule-admin__queue-fields .components-text-control__input,
+.tm-schedule-admin__queue-fields .components-select-control__input {
+    height: 40px;
+    min-height: 40px;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.tm-schedule-admin__queue-info {
+    display: flex;
+    gap: 18px;
+    color: var(--tm-admin-muted);
+    font-size: 12px;
+}
+
+.tm-schedule-admin__queue-issues {
+    display: grid;
+    gap: 6px;
+    justify-items: start;
+    padding: 10px 12px;
+    border-left: 3px solid #dba617;
+    background: #fcf9e8;
+    font-size: 13px;
+}
+
+.tm-schedule-admin__queue-issues ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.tm-schedule-admin__queue-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.tm-schedule-admin__conflict-actions {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.tm-schedule-admin__json-status {
+    justify-content: space-between;
+    min-height: 34px;
+    padding: 6px 10px;
+    border: 1px solid var(--tm-admin-border);
+    border-top: 0;
+    color: var(--tm-admin-muted);
+    font-size: 12px;
+}
+
+.tm-schedule-admin__json-status--error {
+    border-color: #d63638;
+    background: #fcf0f1;
+    color: #8a2424;
+}
+
+.tm-schedule-admin__json-status--success {
+    border-color: #00a32a;
+    background: #edfaef;
+    color: #006b1b;
+}
+
+.tm-schedule-admin__section-bar {
+    justify-content: space-between;
+    min-height: 36px;
+    margin-bottom: 8px;
+}
+
+.tm-schedule-admin__section-bar h3 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.tm-schedule-admin__table-wrap {
+    max-height: 620px;
+    overflow: auto;
+    border: 1px solid var(--tm-admin-border);
+}
+
+.tm-schedule-admin__table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.tm-schedule-admin__table th,
+.tm-schedule-admin__table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--tm-admin-border);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.tm-schedule-admin__table tr:last-child td {
+    border-bottom: 0;
+}
+
+.tm-schedule-admin__table th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #f6f7f7;
+    color: #3c434a;
+    font-size: 12px;
+}
+
+.tm-schedule-admin__table code {
+    white-space: nowrap;
+}
+
+.tm-schedule-admin__row-actions {
+    justify-content: flex-end;
+    min-width: 220px;
+}
+
+.tm-schedule-admin__empty {
+    color: var(--tm-admin-muted);
+    text-align: center !important;
+}
+
+.tm-schedule-admin__modal-actions {
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+
+@media (max-width: 960px) {
+    .tm-schedule-admin__toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tm-schedule-admin__queue-fields {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .tm-schedule-admin__json-workspace--conflict {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 782px) {
+    .tm-schedule-admin__header,
+    .tm-schedule-admin__section-bar,
+    .tm-schedule-admin__json-status {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .tm-schedule-admin__json {
+        min-height: 480px;
+        font-size: 16px;
+    }
+}

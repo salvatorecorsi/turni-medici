@@ -1,0 +1,180 @@
+.tm-cal {
+    &__bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        strong {
+            font-size: 15px;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.tm-grid {
+    --tm-border: #e0e0e0;
+
+    &__head,
+    &__week {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    &__dow {
+        padding: 4px 6px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #757575;
+    }
+
+    &__cell {
+        position: relative;
+        min-height: 68px;
+        padding: 4px 6px;
+        border: 1px solid var(--tm-border);
+        margin: -1px 0 0 -1px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        &:hover {
+            background: #f0f6ff;
+        }
+
+        &.is-empty {
+            background: #fafafa;
+            cursor: default;
+        }
+
+        &.is-closed {
+            background: #f6f7f7;
+            color: #a0a0a0;
+        }
+
+        &.is-custom {
+            border-left: 3px solid #2271b1;
+        }
+    }
+
+    &__num {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    &__note {
+        position: absolute;
+        top: 4px;
+        right: 6px;
+        font-size: 9px;
+        color: #2271b1;
+    }
+
+    &__hours {
+        font-size: 11px;
+        line-height: 1.3;
+    }
+}
+
+.tm-options {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    &__label {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #757575;
+    }
+
+    input[type='month'] {
+        padding: 4px 6px;
+    }
+}
+
+.tm-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    &__dash {
+        opacity: 0.5;
+    }
+
+    input[type='time'] {
+        padding: 2px 4px;
+    }
+
+    &__error {
+        margin: 0;
+        color: #b32d2e;
+        font-size: 12px;
+        line-height: 1.35;
+    }
+}
+
+.tm-ctx {
+    position: fixed;
+    z-index: 1000000;
+    min-width: 200px;
+    margin: 0;
+    padding: 4px 0;
+    list-style: none;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 8px 14px;
+        border: 0;
+        background: transparent;
+        text-align: left;
+        cursor: pointer;
+        font-size: 13px;
+
+        &:hover {
+            background: #f0f6ff;
+        }
+
+        &.is-destructive {
+            color: #cc1818;
+        }
+    }
+
+    &__overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 999999;
+    }
+}
+
+.tm-day-modal {
+    &__slots {
+        margin: 12px 0;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        margin-top: 16px;
+    }
+}
